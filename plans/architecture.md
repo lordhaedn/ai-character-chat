@@ -1,1 +1,124 @@
-['React Frontend] --> B[Express.js Backend]\n    B --> C[Ollama API]\n    B --> D[Character Cards]\n    B --> E[Chat History]\n```\n\n## Project Structure\n```\nai-character-chat/\n├── backend/\n│   ├── server.js\n│   ├── config/\n│   ├── controllers/\n│   ├── routes/\n│   ├── services/\n│   └── characters/\n│       └── *.md (character card files)\n├── frontend/\n│   ├── public/\n│   └── src/\n│       ├── components/\n│       ├── App.js\n│       └── index.js\n├── package.json\n└── README.md\n```\n\n## Backend Design\n\n### Express.js Server\n- REST API endpoints for chat interactions\n- Character management system\n- Integration with Ollama API\n- Session management for chat history\n\n### Character System\n- Character cards stored as markdown files\n- Each character has:\n  - Name and description\n  - Personality traits\n  - Background story\n  - Behavioral guidelines\n  - Example dialogues\n\n### Ollama Integration\n- HTTP client to communicate with local Ollama instance\n- Model configuration options\n- Error handling for API failures\n\n## Frontend Design\n\n### React Components\n- Chat interface with message history\n- Character selection panel\n- Message input field\n- Real-time response display\n\n### State Management\n- Current character selection\n- Chat history\n- Loading states for API requests\n\n## Extensibility for Future RPG Features\n\n### Database Integration\n- Character data migration from markdown to database\n- Player profiles and progression tracking\n- Game state persistence\n\n### Game Mechanics\n- Character relationship system\n- Quest and dialogue trees\n- Inventory and skill systems\n- World state management\n\n## API Endpoints\n\n### Chat\n- `POST /api/chat` - Send message to character\n- `GET /api/characters` - List available characters\n- `GET /api/characters/:id` - Get character details\n\n### Future Extensions\n- `POST /api/characters` - Create new character\n- `PUT /api/characters/:id` - Update character\n- `POST /api/quests` - Manage quests (future)\n\n## Technology Stack\n- **Backend**: Node.js with Express.js\n- **Frontend**: React.js\n- **AI Service**: Ollama (local LLM)\n- **Character Storage**: Markdown files (extensible to database)\n- **Communication**: REST API with JSON\n\n## Deployment Considerations\n- Docker configuration for easy deployment\n- Environment variable configuration\n- Ollama model management\n- Static file serving for frontend\n\n## Security Considerations\n- Input validation and sanitization\n- Rate limiting for API endpoints\n- CORS configuration\n- Error handling without exposing internal details']
+# AI Character Chat Architecture
+
+## System Overview
+
+```mermaid
+graph LR
+    A[React Frontend] --> B[Express.js Backend]
+    B --> C[Ollama API]
+    B --> D[Character Cards]
+    B --> E[Chat History]
+```
+
+## Project Structure
+
+```
+ai-character-chat/
+├── backend/
+│   ├── server.js
+│   ├── config/
+│   ├── controllers/
+│   ├── routes/
+│   ├── services/
+│   └── characters/
+│       └── *.md (character card files)
+├── frontend/
+│   ├── public/
+│   └── src/
+│       ├── components/
+│       ├── App.js
+│       └── index.js
+├── package.json
+└── README.md
+```
+
+## Backend Design
+
+### Express.js Server
+
+- REST API endpoints for chat interactions
+- Character management system
+- Integration with Ollama API
+- Session management for chat history
+
+### Character System
+
+- Character cards stored as markdown files
+- Each character has:
+  - Name and description
+  - Personality traits
+  - Background story
+  - Behavioral guidelines
+  - Example dialogues
+
+### Ollama Integration
+
+- HTTP client to communicate with local Ollama instance
+- Model configuration options
+- Error handling for API failures
+
+## Frontend Design
+
+### React Components
+
+- Chat interface with message history
+- Character selection panel
+- Message input field
+- Real-time response display
+
+### State Management
+
+- Current character selection
+- Chat history
+- Loading states for API requests
+
+## Extensibility for Future RPG Features
+
+### Database Integration
+
+- Character data migration from markdown to database
+- Player profiles and progression tracking
+- Game state persistence
+
+### Game Mechanics
+
+- Character relationship system
+- Quest and dialogue trees
+- Inventory and skill systems
+- World state management
+
+## API Endpoints
+
+### Chat
+
+- `POST /api/chat` - Send message to character
+- `GET /api/characters` - List available characters
+- `GET /api/characters/:id` - Get character details
+
+### Future Extensions
+
+- `POST /api/characters` - Create new character
+- `PUT /api/characters/:id` - Update character
+- `POST /api/quests` - Manage quests (future)
+
+## Technology Stack
+
+- **Backend**: Node.js with Express.js
+- **Frontend**: React.js
+- **AI Service**: Ollama (local LLM)
+- **Character Storage**: Markdown files (extensible to database)
+- **Communication**: REST API with JSON
+
+## Deployment Considerations
+
+- Docker configuration for easy deployment
+- Environment variable configuration
+- Ollama model management
+- Static file serving for frontend
+
+## Security Considerations
+
+- Input validation and sanitization
+- Rate limiting for API endpoints
+- CORS configuration
+- Error handling without exposing internal details
