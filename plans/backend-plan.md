@@ -55,4 +55,4 @@ backend/
 ## Environment Variables
 - OLLAMA_HOST: URL for Ollama API (default: http://localhost:11434)
 - PORT: Server port (default: 3001)
-- MODEL: Default model to use (default: llama3)
+- MODEL: Default model to use (default: gemma4)
