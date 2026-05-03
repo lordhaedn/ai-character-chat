@@ -1,5 +1,6 @@
 from pydantic_ai import Agent, ModelSettings
 from pydantic_ai.models.openai import OpenAIModel
+from pydantic_ai.providers.openai import OpenAIProvider
 from config import settings
 from npc.models import ConversationInput, ConversationOutput
 
@@ -7,9 +8,13 @@ class SarahBrain:
     def __init__(self, memory_repo):
         self.memory_repo = memory_repo
         # Using OpenAIModel because Ollama is OpenAI-compatible
+        # We use OpenAIProvider to handle the custom base_url for Ollama
         self.model = OpenAIModel(
             model_name=settings.OLLAMA_MODEL,
-            base_url=settings.OLLAMA_URL,
+            provider=OpenAIProvider(
+                base_url=settings.OLLAMA_URL,
+                api_key="ollama"  # Required but ignored by Ollama
+            ),
         )
         self.agent = Agent(
             self.model,
