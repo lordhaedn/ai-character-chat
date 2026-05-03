@@ -11,5 +11,8 @@ dependencies = [
     "openai",
 ]
 
+[tool.setuptools]
+packages = ["npc", "world", "memory"]
+
 [tool.pytest.ini_options]
 testpaths = ["tests"]

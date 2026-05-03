@@ -1,0 +1,6 @@
+pydantic-ai
+qdrant-client
+typer
+pydantic-settings
+python-dotenv
+openai
