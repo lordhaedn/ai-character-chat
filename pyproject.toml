@@ -1,0 +1,15 @@
+[project]
+name = "npc-memory-prototype"
+version = "0.1.0"
+description = "A prototype for an NPC with long-term memory using PydanticAI and Qdrant."
+dependencies = [
+    "pydantic-ai",
+    "qdrant-client",
+    "typer",
+    "pydantic-settings",
+    "python-dotenv",
+    "openai",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
